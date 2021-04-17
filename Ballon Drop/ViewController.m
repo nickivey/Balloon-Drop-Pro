@@ -15,24 +15,29 @@
 {
     [super viewDidLoad];
 
-    // Configure the view.
+   
+       // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
-    
+
     // Create and configure the scene.
-    SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    SKScene * scene = [MyScene sceneWithSize:self.view.frame.size];
+    scene.scaleMode = SKSceneScaleModeResizeFill;
+    
     
     // Present the scene.
     [skView presentScene:scene];
 }
 
+
 - (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+- (BOOL)prefersStatusBarHidden
 {
     return YES;
 }
-
 - (NSUInteger)supportedInterfaceOrientations
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {

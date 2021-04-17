@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
-
+#import "iRate.h"
 @implementation AppDelegate
++(void)initialize {
+    [iRate sharedInstance].appStoreID = 866091597; // Replace this
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
